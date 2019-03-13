@@ -1,5 +1,9 @@
 import tensorflow as tf
 from numpy import array, array_split, round
+import time
+
+init_time = int(round(time.time() * 1000))
+
 
 train_loop = 2000
 learn_rate = 5
@@ -88,6 +92,9 @@ with tf.Session() as sess:
     test = array_split(test_data, len(test_data))
     for i in range(len(test_data)):
         print(round(sess.run(y2, {x: test[i]}), 8))
+
+time = int(round(time.time() * 1000)) - init_time
+print(time)
 
 
 
