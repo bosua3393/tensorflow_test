@@ -57,4 +57,4 @@ for i in range(1000):
 print('testing')
 test = np.array_split(test_data, len(test_data))
 for i in range(len(test_data)):
-    print(np.round(sess.run(y, {x: test[i]}), 3))
+    print(sess.run(y, {x: test[i]}))
